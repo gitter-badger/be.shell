@@ -1,135 +1,147 @@
-/*Eve theme for Be::Shell by Cornhelius
+/*Flare theme for Be::Shell by Andrea Calzavacca (paranoid.nemo@gmail.com)
  * This is the main CSS theme file, with panels config, 
  * general fixes and font management. Applet-specific 
  * parts have been moved to the 
- * /Themes/Vertex/style.css.d/ directory */ 
+ * /Themes/Flare/style.css.d/ directory */ 
  
 /* Here starts the panels config*/
 
-.BE--Volume {  background-color:transparent;  margin:0px;  max-width:19px; }
-.BE--MediaTray { background-color:transparent; }
-.BE--MediaTray QToolButton { background-color:rgba(0,0,0,0); border:none; padding: 0 2 0 2; max-width:16px; }
-/*.BE--MediaTray QToolButton::hover {
-  border:none;
-}*/
+.BE--Volume {  
+    background-color: transparent;  
+    margin: 0px;  
+    max-width: 19px; 
+}
+
+.BE--MediaTray { 
+    background-color: transparent;
+}
+
+.BE--MediaTray QToolButton { 
+    background-color: rgba(0,0,0,0); 
+    border: none; 
+    padding: 0 2 0 2; 
+    max-width: 16px; 
+}
 
 #BottomPanel {
-  background-color:rgba(0,0,0,190);
-  border:none;
+  background-color: rgba(0,0,0,190);
+  border: none;
 }
 
 #TopPanel {
-  background-color:rgba(0,0,0,190);
-  border:none;
-  border-bottom-right-radius:2px;
-  border-bottom-left-radius:2px;
+  background-color: rgba(0,0,0,190);
+  border: none;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
 }
 
 #Uberbar {
-  background-color:transparent;
+  background-color: transparent;
 }
 
 #start {
-  background-color:transparent;
-  border-bottom-left-radius:13px;
-  border-top-left-radius:13px;
-  border:none;
-  max-width:24;
-  padding-left:5;
+  background-color: transparent;
+  border-bottom-left-radius: 13px;
+  border-top-left-radius: 13px;
+  border: none;
+  max-width: 24;
+  padding-left: 5;
 }
 
 .BE--Session:menu-indicator {
-  image:none;
+  image: none;
 }
 
 #upico {
-  background-color:transparent;
-  padding-left:3px;
+  background-color: transparent;
+  padding-left: 3px;
 }
 
 #mail {
-  background-color:transparent;
-  color:rgb(0,0,0);
-  font-family:cantarell;
-  padding-left:5px;
-  border-top-left-radius:13px;
-  border-bottom-left-radius:13px;
+  background-color: transparent;
+  color: rgb(0,0,0);
+  font-family: cantarell;
+  padding-left: 5px;
+  border-top-left-radius: 13px;
+  border-bottom-left-radius: 13px;
 }
 
 #mpc {
-  background-color:transparent;
-  padding-right:5px;
-  padding-left:5px;
-  font-size:9pt;
-  font-family:cantarell;
-  border:none;
-  color:rgb(255,255,255);
+  background-color: transparent;
+  padding-right: 5px;
+  padding-left: 5px;
+  font-size: 9pt;
+  font-family: cantarell;
+  border: none;
+  color: rgb(255,255,255);
 }
 
 #tray {
-  background-color:transparent;
-  padding-right:5px;
+  background-color: transparent;
+  padding-right: 5px;
 }
 
 #spacer {
-  max-width:5px;
+  max-width: 5px;
 }
 
 /*Global Menu*/
-.BE--GMenu QMenuBar {  font:9pt cantarell; padding:0 12 0 5; 
-  background-color:transparent;
-  border:none;
+.BE--GMenu QMenuBar {  
+  font: 9pt cantarell; 
+  padding: 0 12 0 5; 
+  background-color: transparent;
+  border: none;
 }
 
 .BE--GMenu QMenuBar::item {
-  background-color:transparent;
-  color:rgb(255,255,255);
+  background-color: transparent;
+  color: rgb(255,255,255);
 }
 
 .BE--GMenu QMenuBar::item::selected {
-  color:rgb(0,0,0);
-  background-color:rgb(246,163,29);
-  border-radius:2px;
+  color: rgb(0,0,0);
+  background-color: rgb(246,163,29);
+  border-radius: 2px;
 }
 
 /*The menus */
 QMenu {
-  background:rgba(255,255,255,240);
-  color:rgb(0,0,0);
-  border:none;
-  font-size:9pt;
-  font-family:oxygen sans;
+  background: rgba(255,255,255,240);
+  color: rgb(0,0,0);
+  border: none;
+  font-size: 9pt;
+  font-family: oxygen sans;
 }
 
 QMenu::item {
-  border:transparent;  
-  padding:3 24 3 2;
+  border: transparent;  
+  padding: 3 24 3 2;
 }
 
 QMenu::item:selected {
-  background:rgb(246,163,29);
-  color:rgb(255,255,255);
-  padding:3 24 3 2;
+  background: rgb(246,163,29);
+  color: rgb(255,255,255);
+  padding: 3 24 3 2;
 }
 
 QMenu::indicator {
   subcontrol-origin: margin;
   subcontrol-position: top right;
-  margin:6px;
+  margin: 6px;
 }
 
 QMenu::indicator:non-exclusive:unchecked {
   background: rgba(255,255,255,70);
-  border:none;
-  margin:7px;
+  border: none;
+  margin: 7px;
 }
 
 QMenu::indicator:non-exclusive:checked {
-  background:rgba(255,255,255,70);
+  background: rgba(255,255,255,70);
 }
 
 QMenu::separator {
-  height:1px;
-  border:none;
-  background:rgb(226,225,227);
+  height: 1px;
+  border: none;
+  background: rgb(226,225,227);
 }
