@@ -1,0 +1,32 @@
+#Dockbar {
+    background-color: transparent;
+}
+
+#dock {
+    background-color: rgba(0,0,0,100%);
+}
+
+#OneTask, #ManyTasks { 
+    background-color: transparent;
+    border: none;
+    padding: 0 0 0 0;
+}
+
+#OneTask:hover, #ManyTasks:hover {
+    background-color: transparent;
+    border: none;
+    padding: 0 0 0 0;
+}
+
+#OneTask:checked, #ManyTasks:checked {
+    background-color: rgba(244,244,244,100%);
+    border: none;
+    padding: 0 0 0 0;
+}
+
+.BE--Task {
+    background-color: transparent;
+    border: none;
+    padding: 0 0 0 0;
+}
+    

@@ -1,0 +1,57 @@
+/* Aweshell theme for BE::Shell created by Andrea Calzavacca (paranoid.nemo@gmail.com)
+This is the main style configuration file, the other one can be found into the
+style.css.d dir. */
+
+#TopPanel {
+    background-color: rgba(0,0,0,100%);
+}
+
+#BottomPanel {
+    background-color: rgba(0,0,0,100%);
+}
+
+#up {
+    padding: -2 0 0 0;
+}
+
+#mpd {
+    color: rgba(244,244,244,100%);
+    padding: 2 0 0 0;
+}
+
+#start {
+    background-color: transparent;
+    border: none;
+}
+
+#start:hover {
+    background-color: rgba(244,244,244,100%);
+    border: none;
+}
+
+.BE--Pager QToolButton {
+    background-color: transparent;
+    color: rgba(244,244,244,100%);
+    font-family: angkor;
+    font-size: 9pt;
+    max-width: 22px;
+    border: none;
+    padding: 0 2 0 2;
+    margin: 0 0 0 0;
+}
+
+.BE--Pager QToolButton:checked, .BE--Pager QToolButton:hover {
+    background-color: rgba(244,244,244,100%);
+    color: rgba(0,0,0,100%);
+    font-family: angkor;
+    font-size: 9pt;
+    max-width: 22px;
+    padding: 0 2 0 2;
+    margin: 0 0 0 0;
+}
+
+.BE--Volume {
+    background-color: transparent;
+    color: rgba(244,244,244,100%);
+    padding: 0 0 0 0;
+}
