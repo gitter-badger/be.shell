@@ -39,21 +39,6 @@ Size=22
 Struts=true
 Visible=true
 
-[TopPanel]
-Applets=start,pager,stretch,infocenter,up
-BlurRadius=0
-CastShadow=true
-Frozen=false
-Id=TopPanel
-Layer=0
-Length=100
-Offest=0
-Position=0
-Screen=-1
-Size=22
-Struts=true
-Visible=true
-
 [Dockbar]
 Applets=dock,stretch
 BlurRadius=0
@@ -69,13 +54,103 @@ Size=24
 Struts=true
 Visible=false
 
+[TopPanel]
+Applets=start,pager,stretch,infocenter,wifi,up
+BlurRadius=0
+CastShadow=true
+Frozen=false
+Id=TopPanel
+Layer=0
+Length=100
+Offest=0
+Position=0
+Screen=-1
+Size=22
+Struts=true
+Visible=true
+
+[battery]
+Exec=kcmshell5 powerdevilglobalconfig
+FillIsCharge=True
+Type=Battery
+WheelDown=qdbus org.kde.kglobalaccel /component/kded5 invokeShortcut "Increase Screen Brightness"
+WheelUp=qdbus org.kde.kglobalaccel /component/kded5 invokeShortcut "Decrease Screen Brightness"
+
+[browser]
+Exec=firefox
+Icon=firefox
+IconSize=20
+Label=Browser
+Mode=0
+Type=Button
+
+[clock]
+Pattern='<html>'ddd. dd MMM. hh:mm ap'</html>'
+Type=Clock
+
+[darkroom]
+Exec=darktable
+Icon=darktable
+IconSize=20
+Label=Darkroom
+Mode=0
+Type=Button
+
 [dock]
 Applets=task
-Position=2
 BlurRadius=100
 Frozen=true
 Id=dock
+Position=2
 Type=Panel
+
+[editor]
+Exec=kate
+Icon=kate
+IconSize=20
+Label=Editor
+Mode=0
+Type=Button
+
+[file-manager]
+Exec=dfm
+Icon=dolphin
+IconSize=20
+Label=File Manager
+Mode=0
+Type=Button
+
+[infocenter]
+Geometry=427,191,426,417
+
+[irc]
+Exec=konversation
+Icon=konversation
+IconSize=20
+Label=IRC
+Mode=0
+Type=Button
+
+[mpd]
+Exec=$HOME/.local/share/be.shell/Scripts/applet mpc mpc
+Lines=1
+PermittedCommands=mpc toggle
+PollInterval=1000
+Type=Label
+
+[wifi]
+Exec=$HOME/.local/share/be.shell/Scripts/applet wifi text
+Lines=1
+PollInterval=1000
+Type=Label
+
+[start]
+DBus=session;org.kde.be.shell;/Shell;org.kde.be.shell;togglePanel;Dockbar
+Icon=start
+IconSize=22
+Label=Start
+Mode=0
+Type=Button
 
 [task]
 AlwaysGroup=True
@@ -87,81 +162,15 @@ OnlyMinimized=False
 Spacing=0
 Type=Taskbar
 
-[file-manager]
-Exec=dfm
-Icon=dolphin
-IconSize=20
-Label=File Manager
-Mode=0
-Type=Button
-
-[editor]
-Exec=kate
-Icon=kate
-IconSize=20
-Label=Editor
-Mode=0
-Type=Button
-
-[irc]
-Exec=konversation
-Icon=konversation
-IconSize=20
-Label=IRC
-Mode=0
-Type=Button
-
-[browser]
-Exec=firefox
-Icon=firefox
-IconSize=20
-Label=Browser
-Mode=0
-Type=Button
-
-[darkroom]
-Exec=darktable
-Icon=darktable
-IconSize=20
-Label=Darkroom
-Mode=0
-Type=Button
-
-[clock]
-Pattern='<html>'ddd. dd MMM. hh:mm ap'</html>'
-Type=Clock
-
-[mpd]
-Exec=$HOME/.local/share/be.shell/Scripts/applet mpc mpc
-Lines=1
-PermittedCommands=mpc toggle
-PollInterval=1000
-Type=Label
-
 [up]
 Exec=$HOME/.local/share/be.shell/Scripts/applet up
 Lines=1
 PollInterval=600000
 Type=Label
 
-[start]
-DBus=session;org.kde.be.shell;/Shell;org.kde.be.shell;togglePanel;Dockbar
-Label=Start
-Icon=start
-IconSize=22
-Mode=0
-Type=Button
-
 [volume]
 Channel=Master
 MixerCommand=kmix
-Step=5%
 Mode=1
+Step=5%
 Type=Volume
-
-[battery]
-Exec=kcmshell5 powerdevilglobalconfig
-FillIsCharge=True
-Type=Battery
-WheelDown=qdbus org.kde.kglobalaccel /component/kded5 invokeShortcut "Increase Screen Brightness"
-WheelUp=qdbus org.kde.kglobalaccel /component/kded5 invokeShortcut "Decrease Screen Brightness"
