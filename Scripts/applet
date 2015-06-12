@@ -82,8 +82,8 @@ myOutputFile="$THEMEDIR/Scripts/updates"
 #Need to test this and write something for zypper (suse)
 if hash aptitude 2>/dev/null; then  #deb based distros
     UPR=$( aptitude search "~U" | wc -l )
-elif hash yum 2>/dev/null; then #fedora, probably broken
-    UPR=$( yum check-update | wc -l )
+elif hash yum 2>/dev/null; then #fedora
+    UPR=$( dnf check-update | wc -l )
 else #Arch
     UPR=$( checkupdates | wc -l )
     AUR=$( cower --quiet -u | wc -l )
@@ -93,33 +93,32 @@ source "${myOutputFile}"
 
 }
 
-wifi(){ #I'd recommend to use a front end if you want an icon that mesure the strength of the connection, this apple only check the state (connected, not connected)
+wifi(){ 
 
-#Right now text option works only with NetworkManager, soon I'll add a support to Wicd to
+#I'd recommend to use a front end if you want an icon that mesure the strength of the connection, this apple only check the state (connected, not connected)
 
-#TODO find a method to check connectivity status without using per-app tool
-
-myOutputFile="$THEMEDIR/Script/wifi"
-
-NET=$( nmcli n connectivity )
-NET2=$( iwlist scan 2>/dev/null | sed -e '/Quality/!d; s/.*Quality=\([0-9]*\).*/\1/' )
+INT=$( iw dev | grep Interface | awk '{print $2}' )
+NET=$( iw dev $INT link )
+SSID=$( iw dev $INT link | grep SSID | awk '{print $2}' )
 ICO="<img src=\"$THEMEDIR/TopPanel/nm-signal-100\" >"
 ICO2="<img src=\"$THEMEDIR/TopPanel/noconnect\" >"
 ERR="Need to specify an option { icon | text }"
 
 if [[ $1 == "icon" ]]; then
-   if [[ "$NET2" -gt "9" ]]; then
-      echo $ICO
-   else
+   if [[ "$NET" == "Not connected" ]]; then
       echo $ICO2
+   else
+      echo $ICO
    fi
 elif [[ $1 == "text" ]]; then
-   echo "Connection $NET"
+   if [[ "$NET" == "Not connected" ]]; then
+      echo "Connection off"
+   else
+      echo "Connected to $SSID"
+   fi
 else
    echo $ERR
 fi
-
-source "${myOutputFile}"
 
 }
 
