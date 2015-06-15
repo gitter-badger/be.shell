@@ -50,7 +50,7 @@ Length=94
 Offset=3
 Position=2
 Screen=-1
-Size=24
+Size=64
 Struts=true
 Visible=false
 
@@ -65,7 +65,7 @@ Length=100
 Offest=0
 Position=0
 Screen=-1
-Size=22
+Size=24
 Struts=true
 Visible=true
 
@@ -79,7 +79,7 @@ WheelUp=qdbus org.kde.kglobalaccel /component/kded5 invokeShortcut "Decrease Scr
 [browser]
 Exec=firefox
 Icon=firefox
-IconSize=20
+IconSize=40
 Label=Browser
 Mode=0
 Type=Button
@@ -91,7 +91,7 @@ Type=Clock
 [darkroom]
 Exec=darktable
 Icon=darktable
-IconSize=20
+IconSize=40
 Label=Darkroom
 Mode=0
 Type=Button
@@ -107,7 +107,7 @@ Type=Panel
 [editor]
 Exec=kate
 Icon=kate
-IconSize=20
+IconSize=40
 Label=Editor
 Mode=0
 Type=Button
@@ -115,7 +115,7 @@ Type=Button
 [file-manager]
 Exec=dfm
 Icon=dolphin
-IconSize=20
+IconSize=40
 Label=File Manager
 Mode=0
 Type=Button
@@ -126,7 +126,7 @@ Geometry=427,191,426,417
 [irc]
 Exec=konversation
 Icon=konversation
-IconSize=20
+IconSize=40
 Label=IRC
 Mode=0
 Type=Button
@@ -145,7 +145,7 @@ PollInterval=1000
 Type=Label
 
 [start]
-DBus=session;org.kde.be.shell;/Shell;org.kde.be.shell;togglePanel;Dockbar
+Exec=qdbus org.kde.be.shell /Shell togglePanel Dockbar; qdbus org.kde.be.shell /Shell togglePanel BottomPanel
 Icon=start
 IconSize=22
 Label=Start
@@ -156,7 +156,7 @@ Type=Button
 AlwaysGroup=True
 ButtonMode=0
 Buttons=file-manager,browser,konsole,editor,irc,gwenview,ksysguard,settings,darkroom
-IconSize=20
+IconSize=40
 OnlyCurrentDesk=False
 OnlyMinimized=False
 Spacing=0
