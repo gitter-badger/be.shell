@@ -11,12 +11,14 @@ style.css.d dir. */
 }
 
 #up {
-    padding: -2 0 0 0;
+    padding: -1 0 0 0;
+    font-family: angkor;
 }
 
 #mpd {
     color: rgba(244,244,244,100%);
-    padding: 2 0 0 0;
+    padding: 1 0 0 0;
+    font-family: angkor;
 }
 
 #start {
@@ -54,4 +56,17 @@ style.css.d dir. */
     background-color: transparent;
     color: rgba(244,244,244,100%);
     padding: 0 0 0 0;
+}
+
+
+#infocenter {
+    color: rgba(244,244,244,100%);
+    padding: 0 1 1 0;
+    font: 9pt angkor regular;
+}
+
+#wifi {
+    color: rgba(244,244,244,100%);
+    padding-right: 2px;
+    font-family: angkor;
 }
