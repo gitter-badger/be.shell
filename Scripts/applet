@@ -93,6 +93,20 @@ source "${myOutputFile}"
 
 }
 
+volume(){
+
+#myOutputFile="$THEMEDIR/Scripts/volume"
+
+#Need to create a string that take R&L volume status and make a med
+
+STS=$( amixer get Master | grep -Eo '[0-9]+%' | head -n 1 )
+#STSR=$( amixer get Master | grep -Eo '[0-9]' | head -n 2 | tail -n 1 )
+echo $STS
+
+#source "${myOutputFile}"
+
+}
+
 wifi(){ 
 
 #I'd recommend to use a front end if you want an icon that mesure the strength of the connection, this apple only check the state (connected, not connected)
@@ -131,13 +145,16 @@ fi
 
 case $1 in
     mpc) #Function music takes a param itself:
-        music "$2"
+        music $2
         ;;
     mail) 
         mail
         ;;
     up)
         updates
+        ;;
+    vol)
+        volume
         ;;
     wifi)
         wifi $2
