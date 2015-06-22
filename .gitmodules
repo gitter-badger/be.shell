@@ -1,3 +1,6 @@
 [submodule "lame"]
 	path = lame
 	url = https://github.com/Bedevil/lame.git
+[submodule "skutter"]
+	path = skutter
+	url = https://github.com/Bedevil/skutter
