@@ -31,7 +31,7 @@ Installation
 
 Clone this repository:
 
-    git clone https://github.com/Bedevil/be.shell.git
+    git clone --recursive https://github.com/Bedevil/be.shell.git
     cd be.shell
     
 You can either install presets using the provided script or copying the files manually.
