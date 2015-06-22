@@ -97,13 +97,21 @@ volume(){
 
 #myOutputFile="$THEMEDIR/Scripts/volume"
 
-#Need to create a string that take R&L volume status and make a med
+STS=$( amixer get Master | grep -Eo '[0-9]+%' | head -n 1 | grep -Eo '[0-9]+' )
 
-STS=$( amixer get Master | grep -Eo '[0-9]+%' | head -n 1 )
-#STSR=$( amixer get Master | grep -Eo '[0-9]' | head -n 2 | tail -n 1 )
-echo $STS
+echo "vol.$STS%"
 
 #source "${myOutputFile}"
+
+}
+
+fs(){
+
+myOutputFile="$THEMEDIR/Scripts/fs"
+
+SPC=$( df /$1 | grep -Eo '[0-9]+%' | grep -Eo '[0-9]+' )
+
+source "${myOutputFile}"
 
 }
 
@@ -156,6 +164,9 @@ case $1 in
     vol)
         volume
         ;;
+    fs)
+	fs $2
+	;;
     wifi)
         wifi $2
         ;;
