@@ -4,6 +4,7 @@ IconPos=484ee7:110:60,10168c1:110:157,
 IconSize=64
 ShowIcons=false
 Tint=invalid
+TrashCan=false
 TrashSize=64
 TrashX=26
 TrashY=51
@@ -13,7 +14,7 @@ WallpaperAspect=-1
 WallpaperMode=7
 
 [BE::Shell]
-Panels=TopPanel,BottomPanel,Dockbar
+Panels=TopPanel,BottomPanel,Dockbar,MusicPanel
 Theme=Aweshell
 
 [Be::Desk]
@@ -46,7 +47,7 @@ CastShadow=false
 Frozen=false
 Id=Dockbar
 Layer=0
-Length=94
+Length=97
 Offset=3
 Position=2
 Screen=-1
@@ -54,8 +55,22 @@ Size=64
 Struts=true
 Visible=false
 
+[MusicPanel]
+Applets=music
+BlurRadius=0
+CastShadow=false
+Id=MusicPanel
+Layer=0
+Length=20
+Offset=76
+Position=3
+Screen=-1
+Size=300
+Struts=false
+Visible=true
+
 [TopPanel]
-Applets=start,pager,stretch,infocenter,wifi,up
+Applets=start,pager,stretch,infocenter,mail,fs,vol,bak,wifi,up,systray
 BlurRadius=0
 CastShadow=true
 Frozen=false
@@ -63,11 +78,20 @@ Id=TopPanel
 Layer=0
 Length=100
 Offest=0
+Offset=0
 Position=0
 Screen=-1
 Size=24
 Struts=true
 Visible=true
+
+[bak]
+Active=true
+Exec=$HOME/.local/share/be.shell/lame/scripts/backup 7
+Lines=1
+PermittedCommands=konsole --hold -e
+PollInterval=14400000
+Type=Label
 
 [battery]
 Exec=kcmshell5 powerdevilglobalconfig
@@ -78,7 +102,7 @@ WheelUp=qdbus org.kde.kglobalaccel /component/kded5 invokeShortcut "Decrease Scr
 
 [browser]
 Exec=firefox
-Icon=firefox
+Icon=view-web-browser-dom-tree
 IconSize=40
 Label=Browser
 Mode=0
@@ -90,7 +114,7 @@ Type=Clock
 
 [darkroom]
 Exec=darktable
-Icon=darktable
+Icon=office-chart-ring
 IconSize=40
 Label=Darkroom
 Mode=0
@@ -98,50 +122,80 @@ Type=Button
 
 [dock]
 Applets=task
-BlurRadius=100
+BlurRadius=0
 Frozen=true
 Id=dock
 Position=2
 Type=Panel
 
 [editor]
-Exec=kate
-Icon=kate
+Exec=atom
+Icon=edit-paste
 IconSize=40
 Label=Editor
 Mode=0
 Type=Button
 
 [file-manager]
-Exec=dfm
-Icon=dolphin
+Exec=dolphin
+Icon=documentation
 IconSize=40
 Label=File Manager
 Mode=0
 Type=Button
 
+[fs]
+Active=true
+Exec=$HOME/.local/share/be.shell/lame/scripts/fs home
+Lines=1
+PollInterval=600000
+Type=Label
+
 [infocenter]
-Geometry=427,191,426,417
+Geometry=64,163,426,417
 
 [irc]
 Exec=konversation
-Icon=konversation
+Icon=meeting-attending
 IconSize=40
 Label=IRC
 Mode=0
 Type=Button
 
+[mail]
+Exec=$HOME/project/Bedevil/be.shell/lame/scripts/mail [username] [password]
+Lines=1
+PollInterval=3600000
+Type=Label
+
 [mpd]
+Active=true
 Exec=$HOME/.local/share/be.shell/Scripts/applet mpc mpc
 Lines=1
-PermittedCommands=mpc toggle
+PermittedCommands=mpc toggle,cantata
 PollInterval=1000
 Type=Label
 
-[wifi]
-Exec=$HOME/.local/share/be.shell/Scripts/applet wifi text
+[music]
+Applets=
+Frozen=true
+Id=music
+Position=0
+Type=Panel
+
+[player]
+Exec=cantata
+Icon=xy-equation-curve
+IconSize=40
+Label=Music Player
+Mode=0
+Type=Button
+
+[skutter]
+Active=true
+FiFo=$HOME/.local/share/skutter/imap
 Lines=1
-PollInterval=1000
+PermittedCommands=dbus
 Type=Label
 
 [start]
@@ -152,15 +206,37 @@ Label=Start
 Mode=0
 Type=Button
 
+[systray]
+FallbackIcons=,Applet NetworkManager,coverbox,covergloobus.py,kmix,megasync,nepomukcontroller,NetworkManager Applet,recorditnow,Thunderbird
+IconSize=18
+NastyIcons=Applet NetworkManager,chromium,coverbox,covergloobus.py,kmix,ksystraycmd,nepomukcontroller,printer-applet,qCheckGMail,soundbox,vokoscreen,wicd-client.py
+Spacing=8
+
 [task]
 AlwaysGroup=True
 ButtonMode=0
-Buttons=file-manager,browser,konsole,editor,irc,gwenview,ksysguard,settings,darkroom
+Buttons=file-manager,browser,terminal,editor,irc,torrent,darkroom,player
 IconSize=40
 OnlyCurrentDesk=False
 OnlyMinimized=False
 Spacing=0
 Type=Taskbar
+
+[terminal]
+Exec=konsole
+Icon=go-next-context
+IconSize=40
+Label=Terminal
+Mode=0
+Type=Button
+
+[torrent]
+Exec=ktorrent
+Icon=arrow-down-double
+IconSize=40
+Label=Torrent
+Mode=0
+Type=Button
 
 [up]
 Exec=$HOME/.local/share/be.shell/Scripts/applet up
@@ -168,9 +244,23 @@ Lines=1
 PollInterval=600000
 Type=Label
 
+[vol]
+Exec=$HOME/.local/share/be.shell/lame/scripts/volume
+Lines=1
+PollInterval=500
+Type=Label
+WheelDown=qdbus org.kde.kglobalaccel /component/kded5 invokeShortcut "Decrease Volume"
+WheelUp=qdbus org.kde.kglobalaccel /component/kded5 invokeShortcut "Increase Volume"
+
 [volume]
 Channel=Master
 MixerCommand=kmix
 Mode=1
 Step=5%
 Type=Volume
+
+[wifi]
+Exec=$HOME/.local/share/be.shell/Scripts/applet wifi text
+Lines=1
+PollInterval=1000
+Type=Label
