@@ -11,15 +11,16 @@ DIVHEADER="<table valign=\"middle\" cellspacing=\"0\" cellpadding=\"0\" style=\"
 
 if [[ "$1" = "mpc" ]]; then
 
-  PLAY="<a href=\"exec:mpc toggle\"><img src=\"$THEMEDIR/BottomPanel/play.png\"width=\"16\"></a>"
-  PAUSE="<a href=\"exec:mpc toggle\"><img src=\"$THEMEDIR/BottomPanel/pause.png\"width=\"16\"></a>"
-  STOP="<a href=\"exec:cantata\"><img src=\"$THEMEDIR/BottomPanel/stop.png\"width=\"16\"></a>"
+  PLAY="<a href=\"exec:mpc toggle\"><img src=\"$THEMEDIR/BottomPanel/play.png\"width=\"10\"></a>"
+  PAUSE="<a href=\"exec:mpc toggle\"><img src=\"$THEMEDIR/BottomPanel/pause.png\"width=\"10\"></a>"
+  STOP="<a href=\"exec:cantata\"><img src=\"$THEMEDIR/BottomPanel/stop.png\"width=\"10\"></a>"
+  MSG="mpd stop"
   
-  out1="$DIVHEADER<td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$TITLE</td><td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$SEP1</td><td>$ARTIST</td></tr></table>"
+  out1="$DIVHEADER<td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$PAUSE</td><td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$TITLE</td><td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$SEP1</td><td>$ARTIST</td></tr></table>"
 
-  out2="$DIVHEADER<td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$ALBUM</td><td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$SEP1</td><td>$ARTIST</td></tr></table>"
+  out2="$DIVHEADER<td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$PLAY</td><td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$ALBUM</td><td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$SEP1</td><td>$ARTIST</td></tr></table>"
 
-  out3="$DIVHEADER$STOP</tr></table>"
+  out3="$DIVHEADER<td>$STOP</td><td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$MSG</td></tr></table>"
 
 elif [[ "$1" = "cover" ]]; then
 

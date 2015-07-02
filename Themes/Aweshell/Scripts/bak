@@ -1,0 +1,12 @@
+STS1="System is Backed up"
+NOBAK="<table valign=\"middle\" cellspacing=\"0\" cellpadding=\"0\" font-family: angkor; font-size: 9pt;><tr><td style=\"color: rgba(244,244,244,100%)\">$STS1</td></tr></table>"
+
+STS2="Required Backup"
+CMD="$HOME/.local/share/be.shell/lame/scripts/backup_manager"
+BAK="<table valign=\"middle\" cellspacing=\"0\" cellpadding=\"0\" font-family: angkor; font-size: 9pt;><tr><td style=\"color: rgba(244,244,244,100%)\"><a href=\"exec:$CMD\">$STS2</a></td></tr></table>"
+
+if [ $exitCode == 0 ]; then
+  echo "$NOBAK"
+else
+  echo "$BAK"
+fi
