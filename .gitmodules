@@ -4,3 +4,9 @@
 [submodule "skutter"]
 	path = skutter
 	url = https://github.com/Bedevil/skutter
+[submodule "be.shell.wiki"]
+	path = be.shell.wiki
+	url = https://github.com/Bedevil/be.shell.wiki.git
+[submodule "wiki"]
+	path = wiki
+	url = https://github.com/Bedevil/be.shell.wiki.git
