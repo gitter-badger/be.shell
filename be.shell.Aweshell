@@ -8,13 +8,13 @@ TrashCan=false
 TrashSize=64
 TrashX=26
 TrashY=51
-Wallpaper=/home/nemo/immagini/sfondi/bot/wallhaven-45380.jpg
+Wallpaper=/home/nemo/immagini/sfondi/valdisstory_gilda_wallpaper2400x1350.jpg
 WallpaperAlign=132
 WallpaperAspect=-1
 WallpaperMode=7
 
 [BE::Shell]
-Panels=TopPanel,BottomPanel,Dockbar,MusicPanel
+Panels=TopPanel,BottomPanel,Dockbar,SidePanel
 Theme=Aweshell
 
 [Be::Desk]
@@ -26,7 +26,7 @@ ShowIcons=false
 TrashCan=false
 
 [BottomPanel]
-Applets=mpd,stretch,clock
+Applets=mpc,stretch,clock
 BlurRadius=0
 CastShadow=true
 Frozen=false
@@ -55,22 +55,22 @@ Size=64
 Struts=true
 Visible=false
 
-[MusicPanel]
-Applets=music
+[SidePanel]
+Applets=
 BlurRadius=0
 CastShadow=false
-Id=MusicPanel
+Id=SidePanel
 Layer=0
-Length=20
-Offset=76
+Length=97
+Offset=3
 Position=3
 Screen=-1
 Size=300
 Struts=false
-Visible=true
+Visible=false
 
 [TopPanel]
-Applets=start,pager,stretch,infocenter,mail,fs,vol,bak,wifi,up,systray
+Applets=start,pager,stretch,infocenter,mail,fs,vol,bak,wifi,up,me
 BlurRadius=0
 CastShadow=true
 Frozen=false
@@ -89,9 +89,12 @@ Visible=true
 Active=true
 Exec=$HOME/.local/share/be.shell/lame/scripts/backup 7
 Lines=1
-PermittedCommands=konsole --hold -e
 PollInterval=14400000
 Type=Label
+
+[me]
+Mode=0
+Type=Sessionbutton
 
 [battery]
 Exec=kcmshell5 powerdevilglobalconfig
@@ -163,12 +166,12 @@ Mode=0
 Type=Button
 
 [mail]
-Exec=$HOME/project/Bedevil/be.shell/lame/scripts/mail [username] [password]
+Exec=$HOME/.local/share/be.shell/lame/scripts/mail username keyring walletname
 Lines=1
-PollInterval=3600000
+PollInterval=600000
 Type=Label
 
-[mpd]
+[mpc]
 Active=true
 Exec=$HOME/.local/share/be.shell/Scripts/applet mpc mpc
 Lines=1
@@ -176,8 +179,13 @@ PermittedCommands=mpc toggle,cantata
 PollInterval=1000
 Type=Label
 
+[mpd]
+Exec=$HOME/.local/share/be.shell/lame/scripts/music
+PollInterval=1000
+Type=Label
+
 [music]
-Applets=
+Applets=mpd
 Frozen=true
 Id=music
 Position=0
@@ -191,15 +199,8 @@ Label=Music Player
 Mode=0
 Type=Button
 
-[skutter]
-Active=true
-FiFo=$HOME/.local/share/skutter/imap
-Lines=1
-PermittedCommands=dbus
-Type=Label
-
 [start]
-Exec=qdbus org.kde.be.shell /Shell togglePanel Dockbar; qdbus org.kde.be.shell /Shell togglePanel BottomPanel
+Exec=qdbus org.kde.be.shell /Shell togglePanel BottomPanel; qdbus org.kde.be.shell /Shell togglePanel Dockbar; qdbus org.kde.be.shell /Shell togglePanel SidePanel
 Icon=start
 IconSize=22
 Label=Start
@@ -249,8 +250,6 @@ Exec=$HOME/.local/share/be.shell/lame/scripts/volume
 Lines=1
 PollInterval=500
 Type=Label
-WheelDown=qdbus org.kde.kglobalaccel /component/kded5 invokeShortcut "Decrease Volume"
-WheelUp=qdbus org.kde.kglobalaccel /component/kded5 invokeShortcut "Increase Volume"
 
 [volume]
 Channel=Master
