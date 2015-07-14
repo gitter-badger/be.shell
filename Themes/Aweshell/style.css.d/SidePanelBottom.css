@@ -1,0 +1,36 @@
+#SidePanelBottom {
+  background-color: rgba(0,0,0,0%);
+}
+
+#lastWidget{
+  background-color: rgba(20,20,20,50%);
+  border-top:2px solid rgba(0,0,0,100%);
+  max-height: 24;
+}
+
+#time {
+  color: rgba(244,244,244,100%);
+  margin: 10 2 10 0;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+#music {
+  background-color: rgba(20,20,20,50%);
+}
+
+#button1 {
+  background-color: rgba(0,0,0,0%);
+  border: none;
+}
+
+#button1:checked {
+  background-color: rgba(0,0,0,100%);
+  border: none;
+  border-top: 2px solid rgba(244,244,244,100%);
+}
+
+#button1:hover {
+  background-color: rgba(0,0,0,50%);
+  border: none;
+}

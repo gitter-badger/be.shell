@@ -1,21 +1,12 @@
 #!/usr/bin/env bash
 
-# var markup for update. Should work with every distro into the applet script
-
 BG="background-color: transparent"
 STYLE="style=\"font-size: 9pt; font-family: angkor; color: rgba(244,244,244,100%); background-color: transparent;\""
-LINE="Repo"
-LINEA="AUR"
-SEP=" - "
-SEP2=" | "
-UPDATE="$UPR$SEP$LINE$SEP2$AUR$SEP$LINEA"
+STYLE2="style=\"font-size: 9pt; font-family: angkor; color: rgba(244,244,244,100%); background-color: transparent;\""
+LINE="repo."
+LINEA="AUR."
+SEP=" "
 
-if [ $UPR == 0 ]; then
-    UP="No updates"
-  else
-    UP=$UPDATE
-fi
-
-myOutputTable="<table border=\"0\"><tr><td $STYLE>$UP</td></tr></table>"
+myOutputTable="<table border=\"0\"><tr><td $STYLE>$LINE</td><td $STYLE2>$UPR</td><td>$SEP</td><td>$SEP</td><td $STYLE>$LINEA</td><td $STYLE2>$AUR</td></tr></table>"
 
 echo "$myOutputTable"

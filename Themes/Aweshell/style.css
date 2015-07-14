@@ -2,78 +2,85 @@
 This is the main style configuration file, the other one can be found into the
 style.css.d dir. */
 
+/* Principal Panel style settings */
+
 #TopPanel {
-    background-color: rgba(0,0,0,100%);
+  background-color: rgba(0,0,0,100%);
 }
 
 #BottomPanel {
-    background-color: rgba(0,0,0,100%);
+  background-color: rgba(0,0,0,100%);
 }
 
-#up {
-    padding: -1 2 0 0;
-    font-family: angkor;
+#mpc {
+  color: rgba(244,244,244,100%);
+  font-family: angkor;
+  font-weight: regular;
 }
 
-#systray {
-    padding: 0 4 0 0;
-}
-
-#mpd {
-    color: rgba(244,244,244,100%);
-    font-family: angkor;
-    font-weight: regular;
-}
+/* Start button style settings */
 
 #start {
-    background-color: transparent;
-    border: none;
+  background-color: transparent;
+  border: none;
 }
 
 #start:hover {
-    background-color: rgba(244,244,244,100%);
-    border: none;
+  background-color: rgba(244,244,244,100%);
+  border: none;
 }
 
+/* Pager style settings */
+
 .BE--Pager QToolButton {
-    background-color: transparent;
-    color: rgba(244,244,244,100%);
-    font-family: angkor;
-    font-size: 9pt;
-    max-width: 22px;
-    border: none;
-    padding: 0 2 0 2;
-    margin: 0 0 0 0;
+  background-color: transparent;
+  color: rgba(244,244,244,100%);
+  font-family: angkor;
+  font-size: 9pt;
+  max-width: 22px;
+  border: none;
+  padding: 0 2 0 2;
+  margin: 0 0 0 0;
 }
 
 .BE--Pager QToolButton:checked, .BE--Pager QToolButton:hover {
-    background-color: rgba(244,244,244,100%);
-    color: rgba(0,0,0,100%);
-    font-family: angkor;
-    font-size: 9pt;
-    max-width: 22px;
-    padding: 0 2 0 2;
-    margin: 0 0 0 0;
-}
-
-.BE--Volume {
-    background-color: transparent;
-    color: rgba(244,244,244,100%);
-    padding: 0 0 0 0;
+  background-color: rgba(244,244,244,100%);
+  color: rgba(0,0,0,100%);
+  font-family: angkor;
+  font-size: 9pt;
+  max-width: 22px;
+  padding: 0 2 0 2;
+  margin: 0 0 0 0;
 }
 
 #infocenter {
-    color: rgba(244,244,244,100%);
-    padding: 0 1 1 0;
-    font: 9pt angkor regular;
+  color: rgba(244,244,244,100%);
+  padding: 0 1 1 0;
+  font: 9pt angkor regular;
 }
 
 #wifi {
-    color: rgba(244,244,244,100%);
-    padding-right: 2px;
-    font-family: angkor;
+  color: rgba(244,244,244,100%);
+  padding-right: 2px;
+  font-family: angkor;
 }
 
-#fs, #mail, #bak, #vol {
-    padding: 0 2 0 0;
+#up {
+  padding: -1 2 0 0;
+}
+
+#fs, #mail, #bak, #vol  {
+  padding: 0 2 0 0;
+}
+
+/* User icon style settings */
+
+#me, #me:hover, #me:checked {
+  background-color: transparent;
+  border: none;
+  margin: 0 0 0 0;
+}
+
+#me:menu-indicator {
+  image: none;
 }

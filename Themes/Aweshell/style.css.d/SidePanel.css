@@ -1,4 +1,7 @@
 #SidePanel {
-  background-color: rgba(244,244,244,50%);
-  border-left: 2px solid rgba(244,244,244,100%);
+  background-color: rgba(0,0,0,0%);
+}
+
+#container {
+  background-color: rgba(100,100,100,50%);
 }

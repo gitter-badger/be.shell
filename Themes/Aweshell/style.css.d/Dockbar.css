@@ -1,25 +1,25 @@
 #Dockbar {
-    background-color: rgba(244,244,244,50%);
-    border-right: 2px solid rgba(244,244,244,100%);
+  background-color: rgba(20,20,20,50%);
+  border-right: 2px solid rgba(0,0,0,100%);
 }
 
 #dock {
 /*    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(200,200,200,100%), stop:0.8 rgba(200,200,200,100%), stop:0.9 rgba(180,180,180,100%), stop:1 rgba(140,140,140,100%)); */
-    background-color: transparent;
-    padding: 10 0 10 0;
+  background-color: transparent;
+  padding: 10 0 10 0;
 }
 
 #OneTask:checked, #ManyTasks:checked {
-    background-color: rgba(244,244,244,100%);
-    border: none;
-    padding: 0 0 0 0;
+  background-color: rgba(0,0,0,100%);
+  border: none;
+  padding: 0 0 0 0;
 }
 
 .BE--Task, #OneTask, #ManyTasks, #OneTask:hover, #ManyTasks:hover {
-    border: none;
-    padding: 0 0 0 0;
+  border: none;
+  padding: 0 0 0 0;
 }
 
 .BE--Task, #OneTask, #ManyTasks {
-    background-color: transparent;
+  background-color: transparent;
 }
