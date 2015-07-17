@@ -84,7 +84,7 @@ Struts=false
 Visible=false
 
 [container]
-Applets=stretch,music
+Applets=stretch,system,music
 BlurRadius=0
 Frozen=true
 Id=container
@@ -114,15 +114,8 @@ Lines=1
 PollInterval=14400000
 Type=Label
 
-[battery]
-Exec=kcmshell5 powerdevilglobalconfig
-FillIsCharge=True
-Type=Battery
-WheelDown=qdbus org.kde.kglobalaccel /component/kded5 invokeShortcut "Increase Screen Brightness"
-WheelUp=qdbus org.kde.kglobalaccel /component/kded5 invokeShortcut "Decrease Screen Brightness"
-
 [browser]
-Exec=chromium
+Exec=firefox
 Icon=view-web-browser-dom-tree
 IconSize=40
 Label=Browser
@@ -130,8 +123,14 @@ Mode=0
 Type=Button
 
 [button1]
-Exec=qdbus org.kde.be.shell /Shell togglePanel music
+Exec=qdbus org.kde.be.shell /button2 org.kde.be.shell.check false; qdbus org.kde.be.shell /button1  org.kde.be.shell.check true; qdbus org.kde.be.shell /Shell showPanel music
 Label=music
+Mode=1
+Type=Button
+
+[button2]
+Exec=qdbus org.kde.be.shell /button1 org.kde.be.shell.check false; qdbus org.kde.be.shell /button2  org.kde.be.shell.check true; qdbus org.kde.be.shell /Shell showPanel system
+Label=system
 Mode=1
 Type=Button
 
@@ -190,7 +189,7 @@ Mode=0
 Type=Button
 
 [lastWidget]
-Applets=button1,stretch,time
+Applets=button1,button2,stretch,time
 BlurRadius=0
 Frozen=true
 Id=lastWidget
@@ -216,16 +215,30 @@ PollInterval=1000
 Type=Label
 
 [mpd]
+Active=true
 Exec=$HOME/.local/share/be.shell/lame/scripts/music
+PermittedCommands=mpc toggle,cantata
 PollInterval=1000
 Type=Label
 
 [music]
-Applets=stretch,mpd,stretch
+Applets=mpd,stretch
 Frozen=true
 Id=music
 Position=3
 Type=Panel
+
+[system]
+Applets=infos
+Frozen=true
+Id=rss
+Position=3
+Type=Panel
+
+[infos]
+Exec=$HOME/.local/share/be.shell/Scripts/rss2htm
+PollInterval=10000
+Type=Label
 
 [player]
 Exec=cantata
@@ -292,7 +305,7 @@ PollInterval=500
 Type=Label
 
 [wifi]
-Exec=$HOME/.local/share/be.shell/Scripts/applet wifi text
+Exec=$HOME/.local/share/be.shell/lame/scripts/wifi
 Lines=1
-PollInterval=1000
+PollInterval=60000
 Type=Label
