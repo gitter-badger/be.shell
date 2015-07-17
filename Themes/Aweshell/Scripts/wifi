@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+out1="<table valign=\"middle\" cellspacing=\"0\" cellpadding=\"0\" font-family: angkor; font-size: 9pt;><tr><td style=\"color: rgba(244,244,244,100%)\">wifi.</td><td style=\"color: rgba(255,191,0,100%)\">$SIGPERC%</td></tr></table>"
+
+out2="<table valign=\"middle\" cellspacing=\"0\" cellpadding=\"0\" font-family: angkor; font-size: 9pt;><tr><td style=\"color: rgba(244,244,244,100%)\">wifi.</td><td style=\"color: rgba(200,200,200,100%)\">$SIGPERC%</td></tr></table>"
+
+ou3="<table valign=\"middle\" cellspacing=\"0\" cellpadding=\"0\" font-family: angkor; font-size: 9pt;><tr><td style=\"color: rgba(244,244,244,100%)\">wifi.</td><td style=\"color: rgba(171,205,239,100%)\">$SIGPERC%</td></tr></table>"
+
+if [[ "$SIGPERC" -lt "50" ]]; then
+  echo "$out1"
+elif [[ "$SIGPERC" -lt "90" ]]; then
+  echo "$out2"
+elif [[ "$SIGPERC" -lt "100" ]]; then
+  echo "$out3"
+fi

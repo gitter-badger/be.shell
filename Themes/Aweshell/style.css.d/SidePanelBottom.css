@@ -5,7 +5,8 @@
 #lastWidget{
   background-color: rgba(20,20,20,50%);
   border-top:2px solid rgba(0,0,0,100%);
-  max-height: 24;
+  min-height: 24px;
+  max-height: 24px;
 }
 
 #time {
@@ -15,22 +16,16 @@
   font-family: sans-serif;
 }
 
-#music {
-  background-color: rgba(20,20,20,50%);
-}
-
-#button1 {
+#button1, #button2 {
   background-color: rgba(0,0,0,0%);
   border: none;
 }
 
-#button1:checked {
+#button1:checked, #button2:checked {
   background-color: rgba(0,0,0,100%);
-  border: none;
-  border-top: 2px solid rgba(244,244,244,100%);
 }
 
-#button1:hover {
+#button1:hover, #button2:hover {
   background-color: rgba(0,0,0,50%);
   border: none;
 }
