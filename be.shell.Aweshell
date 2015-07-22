@@ -92,7 +92,7 @@ Position=0
 Type=Panel
 
 [TopPanel]
-Applets=start,pager,stretch,infocenter,mail,fs,vol,bak,wifi,up,me
+Applets=start,pager,stretch,infocenter,mail,memory,fs,vol,bak,wifi,up,me
 BlurRadius=0
 CastShadow=true
 Frozen=false
@@ -177,6 +177,13 @@ Lines=1
 PollInterval=600000
 Type=Label
 
+[memory]
+Active=true
+Exec=$HOME/.local/share/be.shell/lame/scripts/memory
+Lines=1
+PollInterval=60000
+Type=Label
+
 [infocenter]
 Geometry=64,163,426,417
 
@@ -208,7 +215,7 @@ Type=Sessionbutton
 
 [mpc]
 Active=true
-Exec=$HOME/.local/share/be.shell/Scripts/applet mpc mpc
+Exec=$HOME/.local/share/be.shell/lame/scripts/music line
 Lines=1
 PermittedCommands=mpc toggle,cantata
 PollInterval=1000
@@ -216,13 +223,22 @@ Type=Label
 
 [mpd]
 Active=true
-Exec=$HOME/.local/share/be.shell/lame/scripts/music
+Exec=$HOME/.local/share/be.shell/lame/scripts/music ext
 PermittedCommands=mpc toggle,cantata
 PollInterval=1000
+Lines=1
+Type=Label
+
+[playlist]
+Active=true
+Exec=$HOME/.local/share/be.shell/lame/scripts/playlist
+PermittedCommands=mpc toggle,cantata
+PollInterval=1000
+Lines=100
 Type=Label
 
 [music]
-Applets=mpd,stretch
+Applets=mpd,playlist,stretch
 Frozen=true
 Id=music
 Position=3
