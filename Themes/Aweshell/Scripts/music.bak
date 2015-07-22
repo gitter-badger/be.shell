@@ -1,0 +1,29 @@
+SEP=" "
+SEP1=" | "
+BG="background-color:transparent;"
+DIVHEADER="<table valign=\"middle\" cellspacing=\"0\" cellpadding=\"0\" style=\"${BG}\" font-family: angkor; font-size: 9pt;><tr>"
+
+PLAY="<a href=\"exec:mpc toggle\"><img src=\"$THEMEDIR/BottomPanel/pause.png\"width=\"10\"></a>"
+PAUSE="<a href=\"exec:mpc toggle\"><img src=\"$THEMEDIR/BottomPanel/play.png\"width=\"10\"></a>"
+STOP="<a href=\"exec:cantata\"><img src=\"$THEMEDIR/BottomPanel/stop.png\"width=\"10\"></a>"
+MSG="mpd stop"
+
+if [[ "$STS" = "" ]]; then
+  COV="<a href=\"exec:cantata\"><img src=\"$THEMEDIR/SidePanel/nocover"/></a>"
+else
+  COV=$COVER
+fi
+
+out1="$DIVHEADER<td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$PAUSE</td><td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$TITLE</td><td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$SEP1</td><td>$ARTIST</td></tr></table>"
+
+out2="$DIVHEADER<td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$PLAY</td><td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$ALBUM</td><td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$SEP1</td><td>$ARTIST</td></tr></table>"
+
+out3="$DIVHEADER<td>$STOP</td><td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$MSG</td></tr></table>"
+
+if [[ "$STS" = "playing" ]]; then
+    echo "$out1"
+elif [[ "$STS" = "paused" ]]; then
+    echo "$out2"
+else
+    echo "$out3"
+fi

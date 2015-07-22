@@ -6,7 +6,7 @@
   background-color: rgba(100,100,100,0%);
 }
 
-#music, #rss {
+#music {
   background-color: rgba(20,20,20,50%);
   min-width: 350px;
   max-width: 350px;

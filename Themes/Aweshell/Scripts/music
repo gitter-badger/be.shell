@@ -3,8 +3,8 @@ SEP1=" | "
 BG="background-color:transparent;"
 DIVHEADER="<table valign=\"middle\" cellspacing=\"10\" cellpadding=\"0\" style=\"${BG}\" font-family: angkor; font-size: 9pt;><tr>"
 
-PLAY="<a href=\"exec:mpc toggle\"><img src=\"$THEMEDIR/BottomPanel/play.png\"width=\"10\"></a>"
-PAUSE="<a href=\"exec:mpc toggle\"><img src=\"$THEMEDIR/BottomPanel/pause.png\"width=\"10\"></a>"
+PAUSE="<a href=\"exec:mpc toggle\"><img src=\"$THEMEDIR/BottomPanel/play.png\"width=\"10\"></a>"
+PLAY="<a href=\"exec:mpc toggle\"><img src=\"$THEMEDIR/BottomPanel/pause.png\"width=\"10\"></a>"
 STOP="<a href=\"exec:cantata\"><img src=\"$THEMEDIR/BottomPanel/stop.png\"width=\"10\"></a>"
 MSG="mpd stop"
 
@@ -13,6 +13,10 @@ if [[ "$STS" = "" ]]; then
 else
   COV=$COVER
 fi
+
+LST=( $( echo $PLST | sed -e 's:$:<br>:' ) )
+#LST=( $( echo $PLST | sed -e "s/~/<td align=\"right\">/g" -e "s/$/.$TOTAL/g" -e 's:$:</td><br>:') )
+playlist=$( echo $LST )
 
 out1="<table align=\"center\" cellspacing=\"8\"><tr><td align=\"right\"><br><br>$PLAY<br><br><span style=\"font-size:10pt;font-weight:bold;\">$TITLE</span><br>$ARTIST<br><i>$ALBUM</i></td><td rowspan=\"2\">$COV</td></tr></table>"
 

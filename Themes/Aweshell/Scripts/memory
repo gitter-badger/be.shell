@@ -1,0 +1,8 @@
+DNG="<table valign=\"middle\" cellspacing=\"0\" cellpadding=\"0\" font-family: angkor; font-size: 9pt;><tr><td style=\"color: rgba(244,244,244,100%)\">free.</td><td style=\"color: rgba(255,0,0,100%)\">$RAMF</td></tr></table>"
+NOR="<table valign=\"middle\" cellspacing=\"0\" cellpadding=\"0\" font-family: angkor; font-size: 9pt;><tr><td style=\"color: rgba(244,244,244,100%)\">free.</td><td style=\"color: rgba(200,200,200,100%)\">$RAMF</td></tr></table>"
+
+if [[ $FPERC > 90 ]]; then
+  echo "$DNG"
+else
+  echo "$NOR"
+fi

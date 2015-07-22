@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+#define array and final var
+a_ARTIST=( $( echo $ALIST | sed -e 's:$:<br>:' ) )
+a_SONG=( $( echo $SLIST | sed -e 's:$:<br>:' ) )
+a_TIME=( $( echo $TLIST | sed -e 's:$:<br>:' ) )
+
+ARTIST=$( echo $a_ARTIST )
+TITLE=$( echo $a_SONG )
+TIME=$( echo $a_TIME )
+
+#print results
+out1="<table align=\"center\" cellspacing=\"8\" width=\"350\"><tr><td align=\"left\">$ARTIST</td><td align=\"right\">$TITLE</td><td align=\"right\" style=\"color: rgba(200,200,200,100%)\">$TIME</td></tr></table>"
+
+out2="<table align=\"center\" cellspacing=\"8\"><tr><td align=\"right\"><span style=\"font-size:10pt;font-weight:bold;\">$TITLE</span><br>$ARTIST<br><i>$ALBUM</i></td><td rowspan=\"2\">$COV</td></tr></table>"
+
+echo "$out1"

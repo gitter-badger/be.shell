@@ -59,17 +59,11 @@ style.css.d dir. */
   font: 9pt angkor regular;
 }
 
-#wifi {
-  color: rgba(244,244,244,100%);
-  padding-right: 2px;
-  font-family: angkor;
-}
-
 #up {
   padding: -1 2 0 0;
 }
 
-#fs, #mail, #bak, #vol  {
+#fs, #mail, #bak, #vol, #wifi, #memory {
   padding: 0 2 0 0;
 }
 
