@@ -1,6 +1,8 @@
 Introduction
 =====
 
+[![Join the chat at https://gitter.im/Bedevil/be.shell](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Bedevil/be.shell?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 The [Bedeveil](https://github.com/Bedevil) group contains Themes and Features for BE::Shell, developed to costumize the user experience as much as we can.
 If you want to learn more about BE::Shell you should also check the [project source page](https://sourceforge.net/projects/be-shell/) and is relative wiki.
 
